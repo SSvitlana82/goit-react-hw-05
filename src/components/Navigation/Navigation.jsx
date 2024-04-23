@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
 
-const Navigation = ({}) => {
+const Navigation = () => {
   return (
     <header>
       <nav className={css.nav}>

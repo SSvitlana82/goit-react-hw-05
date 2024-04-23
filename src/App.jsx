@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import MoviesPage from "./pages/MoviesPage";
@@ -17,7 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="actors" element={<MovieCast />}></Route>
+          <Route path="cast" element={<MovieCast />}></Route>
           <Route path="reviews" element={<Moviereviews />} />
         </Route>
 
