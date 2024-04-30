@@ -5,5 +5,34 @@
   display: flex;
 }
 .btn {
-  border: 1px black;
+  text-decoration: none;
+  color: black;
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.21;
+  letter-spacing: -0.03em;
+  display: flex;
+  gap: 3px;
+}
+.btn:hover {
+  color: rgb(21, 12, 139);
+  transition: 300ms linear, color 300ms linear;
+}
+.box {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: start;
+  justify-content: start;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  margin-top: 5px;
+  font-size: 16px;
+}
+.decription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
 }

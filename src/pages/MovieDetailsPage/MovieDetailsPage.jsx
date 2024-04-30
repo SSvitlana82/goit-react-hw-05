@@ -25,18 +25,21 @@ const MovieDetailsPage = () => {
       <NavLink to={backLink} className={css.link}>
         <button className={css.btn}>go Back</button>
       </NavLink>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${detailFilm.poster_path}`}
-        alt="poster"
-        width={250}
-      ></img>
-      <h1 className={css.title}>{detailFilm.title}</h1>
-      <p className={css.average}>{detailFilm.vote_average}</p>
-      <h2 className={css.titleOwerview}>Owerview</h2>
-      <p className={css.owerview}>{detailFilm.overview}</p>
-      <p className={css.genres}>
-        {detailFilm?.genres?.map((item) => item.name).join(", ")}
-      </p>
+      <div className={css.box}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${detailFilm.poster_path}`}
+          alt="poster"
+          width={250}
+        ></img>
+        <div className={css.decription}></div>
+        <h1 className={css.title}>{detailFilm.title}</h1>
+        <p className={css.average}>User Score: {detailFilm.vote_average}</p>
+        <h2 className={css.titleOwerview}>Owerview</h2>
+        <p className={css.owerview}>{detailFilm.overview}</p>
+        <p className={css.genres}>
+          {detailFilm?.genres?.map((item) => item.name).join(", ")}
+        </p>
+      </div>
       <hr />
       <h3 className={css.titleList}>Additional information</h3>
 
