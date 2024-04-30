@@ -1,8 +1,8 @@
 import "./App.css";
-import HomePage from "./pages/HomePage";
-import MoviesPage from "./pages/MoviesPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import MovieDetailsPage from "./pages/MovieDetailsPage";
+import HomePage from "./pages/HomePage/HomePage";
+import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
 import MovieCast from "./components/MovieCast/MovieCast";

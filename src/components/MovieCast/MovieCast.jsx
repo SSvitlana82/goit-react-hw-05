@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getActors } from "../../film-api";
+import css from "./MovieCast.module.css";
 
 const MovieCast = ({}) => {
   const { movieId } = useParams();
@@ -14,19 +15,20 @@ const MovieCast = ({}) => {
   }, []);
 
   return (
-    <div>
+    <div className={css.conteiner}>
       <hr />
-      <ul>
+      <ul className={css.list}>
         {castFilm &&
           castFilm.map((cast) => {
             return (
-              <li key={cast.cast_id}>
+              <li key={cast.cast_id} className={css.listItem}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
                   alt="photo actor"
+                  width={75}
                 ></img>
-                <p>{cast.original_name}</p>
-                <p>Character: {cast.character}</p>
+                <p className={css.info}>{cast.original_name}</p>
+                <p className={css.info}>Character: {cast.character}</p>
               </li>
             );
           })}

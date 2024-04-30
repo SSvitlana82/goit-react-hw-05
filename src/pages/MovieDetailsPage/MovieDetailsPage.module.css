@@ -1,0 +1,9 @@
+.conteiner {
+  display: inline;
+}
+.link {
+  display: flex;
+}
+.btn {
+  border: 1px black;
+}

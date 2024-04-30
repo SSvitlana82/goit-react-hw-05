@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getDescriptionMovie } from "../film-api";
+import { getDescriptionMovie } from "../../film-api";
 import { NavLink } from "react-router-dom";
-import MovieCast from "../components/MovieCast/MovieCast";
 import { Outlet, useLocation } from "react-router-dom";
+import css from "./MovieDetailsPage.module.css";
 
-const MovieDetailsPage = ({}) => {
+const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [detailFilm, setDetailFilm] = useState({});
   useEffect(() => {
@@ -20,26 +20,31 @@ const MovieDetailsPage = ({}) => {
   const location = useLocation();
   const backLink = location.state ?? "/";
   return (
-    <div>
+    <div className={css.conteiner}>
       <hr />
-      <NavLink to={backLink}>go Back</NavLink>
+      <NavLink to={backLink} className={css.link}>
+        <button className={css.btn}>go Back</button>
+      </NavLink>
       <img
         src={`https://image.tmdb.org/t/p/w500/${detailFilm.poster_path}`}
         alt="poster"
+        width={250}
       ></img>
-      <h1>{detailFilm.title}</h1>
-      <p>{detailFilm.vote_average}</p>
-      <h2>Owerview</h2>
-      <p>{detailFilm.overview}</p>
-      <p>{detailFilm?.genres?.map((item) => item.name).join(", ")}</p>
+      <h1 className={css.title}>{detailFilm.title}</h1>
+      <p className={css.average}>{detailFilm.vote_average}</p>
+      <h2 className={css.titleOwerview}>Owerview</h2>
+      <p className={css.owerview}>{detailFilm.overview}</p>
+      <p className={css.genres}>
+        {detailFilm?.genres?.map((item) => item.name).join(", ")}
+      </p>
       <hr />
-      <h3>Additional information</h3>
+      <h3 className={css.titleList}>Additional information</h3>
 
-      <ul>
-        <li>
+      <ul className={css.list}>
+        <li className={css.listItem}>
           <NavLink to="cast">Cast</NavLink>
         </li>
-        <li>
+        <li className={css.listItem}>
           <NavLink to="reviews">Reviews</NavLink>
         </li>
       </ul>

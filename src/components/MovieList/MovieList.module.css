@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+}
+.list {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /*  flex-wrap: wrap; */
+
+  gap: 10px;
+}
+
+.listItem {
+  display: flex;
+  text-decoration: underline;
+  list-style-type: disc;
+}
