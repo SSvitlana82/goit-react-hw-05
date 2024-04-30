@@ -31,14 +31,15 @@ const MovieDetailsPage = () => {
           alt="poster"
           width={250}
         ></img>
-        <div className={css.decription}></div>
-        <h1 className={css.title}>{detailFilm.title}</h1>
-        <p className={css.average}>User Score: {detailFilm.vote_average}</p>
-        <h2 className={css.titleOwerview}>Owerview</h2>
-        <p className={css.owerview}>{detailFilm.overview}</p>
-        <p className={css.genres}>
-          {detailFilm?.genres?.map((item) => item.name).join(", ")}
-        </p>
+        <div className={css.decription}>
+          <h1 className={css.title}>{detailFilm.title}</h1>
+          <p className={css.average}>User Score: {detailFilm.vote_average}</p>
+          <h2 className={css.titleOwerview}>Owerview</h2>
+          <p className={css.owerview}>{detailFilm.overview}</p>
+          <p className={css.genres}>
+            {detailFilm?.genres?.map((item) => item.name).join(", ")}
+          </p>
+        </div>
       </div>
       <hr />
       <h3 className={css.titleList}>Additional information</h3>
