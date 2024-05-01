@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { searchMovies } from "../../film-api";
 import { useSearchParams } from "react-router-dom";
 import MovieList from "../../components/MovieList/MovieList";
+import css from "./MoviesPage.module.css";
 
-const MoviesPage = ({}) => {
+const MoviesPage = () => {
   const [searchFilm, setSearchFilm] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query");
@@ -20,9 +21,16 @@ const MoviesPage = ({}) => {
     setSearchParams({ query: event.target.value });
   };
   return (
-    <div>
-      <input type="text" value={query || ""} onChange={handleChange} />
-      <button type="submit">Search</button>
+    <div className={css.conteiner}>
+      <input
+        type="text"
+        value={query || ""}
+        onChange={handleChange}
+        className={css.input}
+      />
+      <button type="submit" className={css.btnSearch}>
+        Search
+      </button>
       <MovieList top={searchFilm} />
     </div>
   );

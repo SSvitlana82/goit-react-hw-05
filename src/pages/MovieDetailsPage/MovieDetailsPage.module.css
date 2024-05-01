@@ -5,15 +5,21 @@
   display: flex;
 }
 .btn {
+  display: flex;
   text-decoration: none;
   color: black;
   margin-left: 5px;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.21;
-  letter-spacing: -0.03em;
-  display: flex;
-  gap: 3px;
+  letter-spacing: -0.02em;
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 1px;
+}
+.svg {
+  margin-top: 3px;
+  margin-right: 3px;
 }
 .btn:hover {
   color: rgb(21, 12, 139);
@@ -35,4 +41,48 @@
   flex-direction: column;
   gap: 10px;
   max-width: 600px;
+}
+
+.title {
+  display: flex;
+  font-size: 18px;
+  margin-top: 10px 0 0 0;
+}
+.average {
+  display: flex;
+  font-size: 14px;
+  margin: 0;
+}
+.titleOwerview {
+  display: flex;
+  margin: 0;
+  font-size: 16px;
+}
+.owerview {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  text-align: left;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.genres {
+  display: flex;
+  font-size: 14px;
+}
+.titleList {
+  display: flex;
+  font-size: 16px;
+}
+.list {
+  text-align: left;
+  font-size: 14px;
+}
+.listItem {
+  text-align: left;
+  font-size: 14px;
 }

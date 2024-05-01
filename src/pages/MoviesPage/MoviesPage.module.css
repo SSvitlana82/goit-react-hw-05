@@ -1,0 +1,16 @@
+.conteiner {
+  display: flex;
+  width: 800px;
+
+  margin-top: 10px;
+}
+.input {
+  display: flex;
+  width: 300px;
+  height: 25px;
+}
+.btnSearch {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
