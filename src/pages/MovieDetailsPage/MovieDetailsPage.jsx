@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getDescriptionMovie } from "../../film-api";
 import { NavLink } from "react-router-dom";
 import { Outlet, useLocation } from "react-router-dom";
+import { useRef } from "react";
 import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
@@ -15,14 +16,15 @@ const MovieDetailsPage = () => {
       setDetailFilm(detailFilm);
     }
     detailFilm();
-  }, []);
+  }, [movieId]);
 
   const location = useLocation();
-  const backLink = location.state ?? "/";
+  const backLink = useRef(location.state || "/");
+  console.log(backLink);
   return (
     <div className={css.conteiner}>
       <hr />
-      <NavLink to={backLink} className={css.link}>
+      <NavLink to={backLink.current} className={css.link}>
         <button className={css.btn}>
           <svg
             className={css.svg}

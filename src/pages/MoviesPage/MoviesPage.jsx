@@ -11,28 +11,27 @@ const MoviesPage = () => {
 
   useEffect(() => {
     async function getMovie() {
+      if (!query) {
+        return;
+      }
       const movies = await searchMovies(query);
-      console.log(movies);
       setSearchFilm(movies.results);
     }
     getMovie();
   }, [query]);
-  const handleChange = (event) => {
-    setSearchParams({ query: event.target.value });
+  const handleSubmit = (event) => {
+    event.preventdefault();
+    setSearchParams({ query: event.target.elements.movie.value });
+    event.target.reset();
   };
   return (
-    <div className={css.conteiner}>
-      <input
-        type="text"
-        value={query || ""}
-        onChange={handleChange}
-        className={css.input}
-      />
+    <form onSubmit={handleSubmit} className={css.conteiner}>
+      <input type="text" name="movie" className={css.input} />
       <button type="submit" className={css.btnSearch}>
         Search
       </button>
       <MovieList top={searchFilm} />
-    </div>
+    </form>
   );
 };
 
