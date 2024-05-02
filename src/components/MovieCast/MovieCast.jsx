@@ -12,7 +12,7 @@ const MovieCast = ({}) => {
       setCastFilm(data.cast);
     }
     getCastFilm();
-  }, []);
+  }, [movieId]);
 
   return (
     <div className={css.conteiner}>

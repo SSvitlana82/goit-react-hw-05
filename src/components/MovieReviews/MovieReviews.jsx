@@ -13,7 +13,7 @@ const Moviereviews = ({}) => {
       setReviews(data.results);
     }
     getRewiewsFilm();
-  }, []);
+  }, [movieId]);
   if (reviews.length === 0) {
     return <p>We don't have any rewiews for this movie.</p>;
   }

@@ -20,18 +20,24 @@ const MoviesPage = () => {
     getMovie();
   }, [query]);
   const handleSubmit = (event) => {
-    event.preventdefault();
+    event.preventDefault();
+    console.log(query);
+    if (query?.trim() === "") {
+      return;
+    }
     setSearchParams({ query: event.target.elements.movie.value });
     event.target.reset();
   };
   return (
-    <form onSubmit={handleSubmit} className={css.conteiner}>
-      <input type="text" name="movie" className={css.input} />
-      <button type="submit" className={css.btnSearch}>
-        Search
-      </button>
+    <div>
+      <form onSubmit={handleSubmit} className={css.conteiner}>
+        <input type="text" name="movie" className={css.input} />
+        <button type="submit" className={css.btnSearch}>
+          Search
+        </button>
+      </form>
       <MovieList top={searchFilm} />
-    </form>
+    </div>
   );
 };
 
